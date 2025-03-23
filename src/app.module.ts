@@ -16,8 +16,4 @@ import { DatabaseModule } from './database/database.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {
-  constructor() {
-    console.log('hola', __dirname);
-  }
-}
+export class AppModule {}

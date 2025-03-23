@@ -20,7 +20,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_NAME'),
-        models: [__dirname + '/features/**/entities/*.entity{.ts}'],
+        models: [__dirname + '/features/**/entities/*.entity{.ts}'], // Listado de modelos
+        autoLoadModels: true, // Carga automaticamente los modelos
         synchronize: false,
       }),
     }),
