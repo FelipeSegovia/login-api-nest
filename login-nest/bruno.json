@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "login-nest",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

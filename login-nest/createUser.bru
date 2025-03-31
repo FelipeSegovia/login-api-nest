@@ -1,0 +1,18 @@
+meta {
+  name: createUser
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/user
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Felipe",
+    "email": "felipe.segovia.rod@gmail.com"
+  }
+}
