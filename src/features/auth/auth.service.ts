@@ -24,7 +24,7 @@ export class AuthService {
     const payload = { sub: user.id, username: user.name };
 
     return {
-      access_token: this.jwtService.sign(payload),
+      accessToken: this.jwtService.sign(payload),
     };
   }
 
@@ -34,7 +34,12 @@ export class AuthService {
       password: await bcrypt.hash(user.password, 10),
     };
 
-    return await this.userService.create(userEncript);
+    await this.userService.create(userEncript);
+
+    return await this.signIn({
+      email: user.email,
+      password: user.password,
+    });
   }
 
   async validateToken(token: string) {
