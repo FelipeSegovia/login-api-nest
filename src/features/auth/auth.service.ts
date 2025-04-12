@@ -36,4 +36,13 @@ export class AuthService {
 
     return await this.userService.create(userEncript);
   }
+
+  async validateToken(token: string) {
+    try {
+      const verifyToken = await this.jwtService.verify(token);
+      return Object.keys(verifyToken).length > 0;
+    } catch {
+      return false;
+    }
+  }
 }
